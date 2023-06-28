@@ -33,7 +33,7 @@ class TasksScreen extends StatelessWidget {
                   radius: 30,
                 ),
                 SizedBox(
-                  height: 12,
+                  height: 10,
                 ),
                 Text(
                   'Todoey',
