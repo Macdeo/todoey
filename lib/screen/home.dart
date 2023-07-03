@@ -1,6 +1,7 @@
 // ignore_for_file: sort_child_properties_last, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:todoey/screen/add_task_screen.dart';
 
 import '../widgets/task_list.dart';
 
@@ -71,7 +72,17 @@ class TasksScreen extends StatelessWidget {
         backgroundColor: Colors.lightBlueAccent,
         onPressed: () {
           showModalBottomSheet(
-              context: context, builder: (context) => Container());
+            isScrollControlled: true,
+            context: context,
+            builder: (context) => SingleChildScrollView(
+              child: Container(
+                  padding: EdgeInsets.only(
+                      bottom: MediaQuery.of(context).viewInsets.bottom),
+                  child: AddTaskScreen()),
+            ),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          );
         },
         child: Icon(Icons.add),
       ),
